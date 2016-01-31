@@ -40,7 +40,7 @@ This function returns all information about the bitcoin address.
 
 ```php
 {
-    addr : // The bitcoin address (1MGzqwnT159dTL9xCQgVbATUSzVvzh8iCU).
+    addr : // The bitcoin address (1M1L7b4tdrY95wYbfqVAhwYEw214WHyB9H).
     minSend : // Minimum sold befor sending the bitcoin in satoshi. (10000).
     percentBefortSend : // The percentage befor sending the bitcoin. (1 -> 100).
     nbTickets : // Number of ticket total (Default 0).
@@ -92,7 +92,7 @@ This function associate the client ticket code to your address bitcoin. Return i
 
 ```php
 {
-    addr : // The bitcoin address (1MGzqwnT159dTL9xCQgVbATUSzVvzh8iCU).
+    addr : // The bitcoin address (1M1L7b4tdrY95wYbfqVAhwYEw214WHyB9H).
     ticket : {
         date : // Date of ticket in timestamp (1454174032).
         satsum : // Amount in satoshi (50).
@@ -141,7 +141,7 @@ Initialize the json rpc for call ibtc.cash api.
 
 ```php
 // call.
-$rep = $call->pay_info('1HUBHMij46Hae75JPdWjeZ5Q7KaL7EFRSD');
+$rep = $call->pay_info('1M1L7b4tdrY95wYbfqVAhwYEw214WHyB9H');
 
 // or call.
 $rep = $call->pay_send('YOUR_BTC_ADDR', 'TIKET_CODE');
@@ -160,7 +160,7 @@ Print the reply to html. This return Array :
 ```php
 $rep = Array
 (
-    ['addr'] => // The bitcoin address (1MGzqwnT159dTL9xCQgVbATUSzVvzh8iCU).
+    ['addr'] => // The bitcoin address (1M1L7b4tdrY95wYbfqVAhwYEw214WHyB9H).
     ['minSend'] => // Minimum sold befor sending the bitcoin in satoshi. (10000).
     ['percentBefortSend'] => // The percentage befor sending the bitcoin. (1 -> 100).
     ['nbTickets'] => // Number of ticket total (Default 0).
@@ -202,7 +202,7 @@ $rep = Array
 )
 ```
 
-## Manage Error
+### Manage Error
 
 Management error in the API. Use try catch in php.
 
@@ -210,7 +210,7 @@ Management error in the API. Use try catch in php.
 try {
 	
 	// Call
-	$rep = $call->pay_info('1HUBHMij46Hae75JPdWjeZ5Q7KaL7EFRSD');
+	$rep = $call->pay_info('1M1L7b4tdrY95wYbfqVAhwYEw214WHyB9H');
 	
 } catch (Exception $e) {
 	
@@ -224,4 +224,73 @@ try {
  */
 ```
 
+**WARNING** / You need to enable fopen in your php for externe comunication.
+
+***
+
 # jQuery
+
+Cross-domain is active here. You can use this system in your application or your website.
+
+*Example file `jQuery/index.html`*
+
+```js
+<!-- start: Framework jQuery -->
+<script type="text/javascript" src="jquery.min.js"></script>
+
+<!-- plug: Class Json RPC client -->
+<script type="text/javascript" src="jquery.jsonrpc.min.js"></script>
+```
+Import the json rpc client and jQuery in your html code.
+
+
+```js
+// Init le JSON RPC url & NameSpace.
+$.jsonRPC.setup({ endPoint : 'https://ibtc.cash/api/', namespace : '' });
+```
+Initialize the json rpc for call ibtc.cash api in balise `<script>`.
+
+```js
+// connexion server.
+$.jsonRPC.request('pay_info', {
+	
+	// Param send.
+	params : ['1M1L7b4tdrY95wYbfqVAhwYEw214WHyB9H'],
+	
+	// succees.
+	success : function(data) {
+		
+		// Add result to code.
+		var result = data.result;
+		
+		// Print to console.
+		console.log(result);
+		
+		// Alert good call.
+		alert('See the console Please');
+	},
+	
+	// erreur server.
+	error : function(data) {
+			
+		// data.error = FORM_WARNING_ADDR_BTC_INVALID
+		//            = SERV_ERROR_OFFLINE_MESSAGE
+		//            = ...
+		alert('Error code : '+data.error);
+	}
+});
+```
+It'll just make the call function. This return object :
+
+```js
+var result = {
+    addr : // The bitcoin address (1M1L7b4tdrY95wYbfqVAhwYEw214WHyB9H).
+    minSend : // Minimum sold befor sending the bitcoin in satoshi. (10000).
+    percentBefortSend : // The percentage befor sending the bitcoin. (1 -> 100).
+    // ... See more from Function pay_info.
+}
+```
+
+# Complementary
+
+Any excessive or illegal use may be canceled and the associated address prohibited. We do not need to store or hold any bitcoins in our server.
