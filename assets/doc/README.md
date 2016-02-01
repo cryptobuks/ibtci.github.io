@@ -257,7 +257,7 @@ $.jsonRPC.request('pay_info', {
 	// Param send.
 	params : ['1M1L7b4tdrY95wYbfqVAhwYEw214WHyB9H'],
 	
-	// succees.
+	// success.
 	success : function(data) {
 		
 		// Add result to code.
@@ -267,7 +267,7 @@ $.jsonRPC.request('pay_info', {
 		console.log(result);
 		
 		// Alert good call.
-		alert('See the console Please');
+		alert('See the console Please for more info '+result.addr);
 	},
 	
 	// erreur server.
