@@ -19,9 +19,9 @@ The value of the received payment is in satoshi. Divide by 100000000 to get the 
 
 #### API URL
 
-**The URL for all requests** / Use this URL to communicate with our API. Observe the closing slash and protocol HTTPS.
+**The URL for all requests** / Use this URL to communicate with our API. Observe the protocol HTTPS.
 
-* `https://ibtc.cash/api/`
+* `https://ibtc.cash`
 
 ***
 
@@ -134,7 +134,7 @@ Import the json rpc client in your code.
 
 ```php
 // call API.
-$call = new jsonRPC2Client("https://ibtc.cash/api/");
+$call = new jsonRPC2Client("https://ibtc.cash");
 ```
 Initialize the json rpc for call ibtc.cash api.
 
@@ -246,7 +246,7 @@ Import the json rpc client and jQuery in your html code.
 
 ```js
 // Init le JSON RPC url & NameSpace.
-$.jsonRPC.setup({ endPoint : 'https://ibtc.cash/api/', namespace : '' });
+$.jsonRPC.setup({ endPoint : 'https://ibtc.cash', namespace : '' });
 ```
 Initialize the json rpc to call ibtc.cash api in balise `<script>`.
 
