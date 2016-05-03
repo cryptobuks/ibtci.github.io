@@ -295,3 +295,11 @@ var result = {
 
 * Any excessive or illegal use may be canceled and the associated address prohibited. 
 * We do not need to store or hold any bitcoins in our server.
+* Your client can use this service every 10 minutes.
+
+| Zone | Country| Price |
+|------|------|-------------|
+|**A**|United States, United Kingdom, Canada, Germany, France, Liechtenstein|53 Satoshis|
+|**B**|Australia, Portugal, Spain, Italy, Norway, Switzerland, Ireland, Luxembourg|52 Satoshis|
+|**C**|Japan, Netherlands, Denmark, Finland, Belgium, Brazil, Israel, Mexico, Argentina, Ecuador, Paraguay, Peru, Chile, Costa Rica, Russia, China|51 Satoshis|
+|**D**|All others|50 Satoshis|
