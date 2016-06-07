@@ -299,7 +299,7 @@ var result = {
 
 | Zone | Country| Price |
 |------|------|-------------|
-|**A**|United States, United Kingdom, Canada, Germany, France, Liechtenstein|200 Satoshis|
-|**B**|Australia, Portugal, Spain, Italy, Norway, Switzerland, Ireland, Luxembourg|150 Satoshis|
-|**C**|Japan, Netherlands, Denmark, Finland, Belgium, Brazil, Israel, Mexico, Argentina, Ecuador, Paraguay, Peru, Chile, Costa Rica, Russia, China|100 Satoshis|
-|**D**|All others|50 Satoshis|
+|**A**|United States, United Kingdom, Canada, Germany, France, Liechtenstein|500 Satoshis|
+|**B**|Australia, Portugal, Spain, Italy, Norway, Switzerland, Ireland, Luxembourg|350 Satoshis|
+|**C**|Japan, Netherlands, Denmark, Finland, Belgium, Brazil, Israel, Mexico, Argentina, Ecuador, Paraguay, Peru, Chile, Costa Rica, Russia, China|250 Satoshis|
+|**D**|All others|100 Satoshis|
